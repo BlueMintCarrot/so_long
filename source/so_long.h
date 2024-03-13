@@ -6,7 +6,7 @@
 /*   By: joana <joana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 00:50:48 by joana             #+#    #+#             */
-/*   Updated: 2024/03/13 14:28:40 by joana            ###   ########.fr       */
+/*   Updated: 2024/03/13 16:41:28 by joana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,6 +152,7 @@ int				jump_bunny_right_right2(t_vars *vars, t_info *info, int r);
 int				map_check(char **map, int f, int c, int p);
 int				map_check2(char **map);
 int				map_check3(char **map);
+int				map_check_31(char **map, int i);
 int				map_check4(char **map);
 int				map_manager(char **map, t_info *info);
 int				move_down(int k, t_info *info);

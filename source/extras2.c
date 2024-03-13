@@ -6,7 +6,7 @@
 /*   By: joana <joana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 17:23:30 by joana             #+#    #+#             */
-/*   Updated: 2024/03/13 13:50:02 by joana            ###   ########.fr       */
+/*   Updated: 2024/03/13 17:01:18 by joana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,20 @@ void	quit_bat(t_info *info)
 {
 	print_error_message(10);
 	quit(info, EXIT_FAILURE);
+}
+
+int	map_check_31(char **map, int i)
+{
+	int	n;
+
+	n = 0;
+	while (map[i][n] != '\0')
+	{
+		if (map[i][n++] != '1')
+		{
+			print_error_message(5);
+			return (0);
+		}
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: joana <joana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 00:24:05 by joana             #+#    #+#             */
-/*   Updated: 2024/03/13 14:10:09 by joana            ###   ########.fr       */
+/*   Updated: 2024/03/13 15:52:17 by joana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,6 @@ void	load_stuff(t_vars *vars, char **map)
 	y = 0;
 	while (map[y])
 	{
-		printf("teste\n");
 		x = 0;
 		while (map[y][x] && map[y][x] != '\n')
 		{

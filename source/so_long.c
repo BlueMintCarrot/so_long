@@ -6,7 +6,7 @@
 /*   By: joana <joana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 00:50:37 by joana             #+#    #+#             */
-/*   Updated: 2024/03/13 14:29:15 by joana            ###   ########.fr       */
+/*   Updated: 2024/03/13 16:20:29 by joana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,7 @@ char	**create_map(char *file_name, int n)
 int	final_map_check(char **map, t_info *info)
 {
 	if (map_manager(map, info) == 0)
-	{
-		write(1, "The map is not valid!\n", 22);
 		return (0);
-	}
 	how_many_ducks(map, info);
 	info->bunny_direction = 6;
 	info->moves = 0;
@@ -108,7 +105,8 @@ int	main(int argc, char **argv)
 	if (name_check(argv[1]) == 0)
 		return (0);
 	map = create_map(argv[1], 0);
-	final_map_check(map, info);
+	if (final_map_check(map, info) == 0)
+		return (0);
 	info->vars = &vars;
 	vars.mlx = mlx_init();
 	vars.window = mlx_new_window(vars.mlx, info->w * 64, info->h * 64, \
@@ -121,6 +119,5 @@ int	main(int argc, char **argv)
 	where_is_the_bunny_going, info);
 	mlx_hook(vars.window, 17, 0, quit, info);
 	mlx_loop(vars.mlx);
-	free(info);
 	return (0);
 }

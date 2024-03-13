@@ -6,7 +6,7 @@
 /*   By: joana <joana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 22:00:47 by joana             #+#    #+#             */
-/*   Updated: 2024/03/13 13:13:32 by joana            ###   ########.fr       */
+/*   Updated: 2024/03/13 17:04:05 by joana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,17 @@ int	map_check2(char **map)
 	while (map[i + 1] != NULL)
 	{
 		if (size != (int)ft_strlen(map[i]))
+		{
 			print_error_message(4);
+			return (0);
+		}
 		i++;
 	}
 	if (size != (int)ft_strlen(map[i]) + 1)
+	{
 		print_error_message(4);
+		return (0);
+	}
 	return (1);
 }
 
@@ -45,25 +51,25 @@ int	map_check3(char **map)
 	int	n;
 
 	i = 0;
-	j = 0;
 	n = 0;
 	while (map[0][n] != '\n')
 	{
 		if (map[0][n++] != '1')
+		{
+			print_error_message(5);
 			return (0);
+		}
 	}
 	j = n - 1;
 	while (map[i + 1] != NULL)
 	{
 		if (map[i][0] != '1' || map[i++][j] != '1')
+		{
 			print_error_message(5);
+			return (0);
+		}
 	}
-	n = 0;
-	while (map[i][n] != '\0')
-	{
-		if (map[i][n++] != '1')
-			print_error_message(5);
-	}
+	map_check_31(map, i);
 	return (1);
 }
 
