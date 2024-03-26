@@ -6,7 +6,7 @@
 /*   By: joana <joana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:18:55 by joana             #+#    #+#             */
-/*   Updated: 2024/03/11 22:15:01 by joana            ###   ########.fr       */
+/*   Updated: 2024/03/18 14:18:48 by joana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void	jump_bunny_left_left(t_vars *vars, t_info *info)
 
 	mlx_put_image_to_window(vars->mlx, vars->window, vars->imgs[1]->img, \
 	(info->x * 64), (info->y * 64));
-	while (r < 750)
+	while (r < 1500)
 	{
 		mlx_put_image_to_window(vars->mlx, vars->window, vars->imgs[4]->img, \
 		(info->x * 64), (info->y * 64));
@@ -125,7 +125,7 @@ void	jump_bunny_left_left(t_vars *vars, t_info *info)
 	mlx_put_image_to_window(vars->mlx, vars->window, vars->imgs[1]->img, \
 	(info->x * 64), (info->y * 64));
 	moves_on_screen(info);
-	if (r >= 750 && r < 4500)
+	if (r >= 1500 && r < 4500)
 		jump_bunny_left_left2(vars, info, r);
 	r = 0;
 }

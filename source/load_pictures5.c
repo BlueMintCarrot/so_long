@@ -6,7 +6,7 @@
 /*   By: joana <joana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 02:11:57 by joana             #+#    #+#             */
-/*   Updated: 2024/03/07 14:27:38 by joana            ###   ########.fr       */
+/*   Updated: 2024/03/26 20:06:26 by joana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ void	load_picture19(t_vars *vars)
 	vars->imgs[60] = new_img(64, 64, vars->mlx, vars->window);
 	put_img_to_img(vars->imgs[60], vars->imgs[1], 0, 0);
 	put_img_to_img(vars->imgs[60], \
-	vars->mapimgs->halves->bunny_right_left_half, 0, 0);
+	vars->mapimgs->halves->bunny_left_upper_half, 0, 0);
 	put_img_to_img(vars->imgs[60], vars->mapimgs->bat, 0, 0);
 	vars->imgs[61] = new_img(64, 64, vars->mlx, vars->window);
 	put_img_to_img(vars->imgs[61], vars->imgs[1], 0, 0);
