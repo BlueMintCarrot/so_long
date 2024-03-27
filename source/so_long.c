@@ -6,7 +6,7 @@
 /*   By: joana <joana@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 00:50:37 by joana             #+#    #+#             */
-/*   Updated: 2024/03/13 16:20:29 by joana            ###   ########.fr       */
+/*   Updated: 2024/03/27 20:07:17 by joana            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ char	**create_map(char *file_name, int n)
 int	final_map_check(char **map, t_info *info)
 {
 	if (map_manager(map, info) == 0)
+		return (0);
+	if (big_function(map) == 0)
 		return (0);
 	how_many_ducks(map, info);
 	info->bunny_direction = 6;
