@@ -1,0 +1,36 @@
+Refazer o Makefile com o do Libft como base
+Voltar a olhar para o código e ver se posso encurtar / simplificar mais algumas funções
+Organizar ficheiros
+Trocar nomes de ficheiros e funções ?
+Criar mapas inválidos (testes que eu faço)
+
+
+
+Aumentar os valores do static int para o salto do coelho
+Testar as fonts com a função comentada
+Ver onde parte e resolver até o jogo abrir
+Testar e partir para ver leaks, seg faults, inconsistências e resolver tudo
+Pedir a alguém para partir e resolver o que outras pessoas encontrarem
+
+
+
+Tentar resolver o morcego spawnar do nada e ficar ali parado e que age como chão
+
+
+
+Escrever as duas funções que me faltam (print_image / load_stuff) XXX
+Fazer uma função que chame os destroyers / frees das imagens e chamar essa função onde tenho o comentário XXX
+Arranjar maneira de fazer a verificação se os load pictures que retornam um int retornam 0 ou não na função que chama os 35 load_pictures XXX
+Funções do free_array para o array de imagens XXX
+Todos os índices do array de imagens têm de ser puxados 2 para trás (funções dos morcegos, coelhos, patos, saída, animações, tudo) XXX
+Ir buscar o GNL e pô-lo num ficheiro dedicado XXX
+Trocar o meu Printf, chamar-lhe prinf XXX
+Ir buscar funções do Libft e pô-las num ficheiro dedicado XXX
+Trocar a função do print_error_message para fazer prinf das mensagens em vez de write XXX
+Fazer um animation geral que chama os duck_animation, flame_animation e bat_animation, e chamar esse animation geral no loop na main XXX
+Verificar que todos os mallocs têm proteção XXX
+Verificar que em todos os free faço (if ...) XXX
+Escrever e organizar o .h XXX
+Ajeitar os load_pictures na função principal deles XXX
+Criar um ficheiro de notas com cada posição do array de imagens (não mandar para avaliação, apenas ter para se for necessário)
+Norminette XXX (bat_animation2.c)
