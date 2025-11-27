@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:51:32 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/27 15:36:37 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/27 19:41:46 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	load_pictures6(t_info *info)
 	info->halves->jumping_bunny_right_right_half = new_file_img
 		("./textures/Jumping_Bunny_Right_Right_Half.xpm",
 			info->vars->mlx, info->vars->window);
+	printf("...5\n");
 }
 
 void	load_pictures7(t_info *info)
@@ -66,6 +67,7 @@ void	load_pictures7(t_info *info)
 	info->halves->right_flame_right_half = new_file_img
 		("./textures/Flame_Right_Right_Half.xpm",
 			info->vars->mlx, info->vars->window);
+	
 }
 
 int	load_pictures8(t_info *info)
@@ -80,7 +82,7 @@ int	load_pictures8(t_info *info)
 		("./textures/Duck_Left_Upper_Half_Turning_Right.xpm",
 			info->vars->mlx, info->vars->window);
 	if (final_image_checker(info) == 0)
-		return (picture_cleaner(info), 0);
+		return (0);
 	info->imgs[0] = new_img(64, 64, info->vars->mlx, info->vars->window);
 	put_img_to_img(info->imgs[0], info->images->floor, 0, 0);
 	put_img_to_img(info->imgs[0], info->images->bat, 0, 0);

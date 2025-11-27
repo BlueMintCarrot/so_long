@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:51:10 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/27 15:26:01 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/27 19:22:50 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,18 +52,16 @@ void	flood_fill(t_info *info, int x, int y)
 
 	w = 0;
 	h = 0;
-	while (info->map[h][w] && info->map[h][w] != '\n')
+	while (info->flood_fill_map[h][w] && info->flood_fill_map[h][w] != '\n')
 		w++;
-	while (info->map[h])
+	while (info->flood_fill_map[h])
 		h++;
 	if (x < 0 || y < 0 || x >= w || y >= h)
 		return ;
-	info->flood_fill_map[y][x] = 'W';
 	if (info->flood_fill_map[y][x] == '1'
-		|| info->flood_fill_map[y][x] == 'W'
-		|| info->flood_fill_map[y][x] == 'X'
-		|| info->flood_fill_map[y][x] == 'Y')
-		return ;
+		|| info->flood_fill_map[y][x] == 'W')
+			return ;
+	info->flood_fill_map[y][x] = 'W';
 	(flood_fill(info, (x + 1), y), flood_fill(info, (x - 1), y));
 	(flood_fill(info, x, (y + 1)), flood_fill(info, x, (y - 1)));
 }

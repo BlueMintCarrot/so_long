@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:51:15 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/26 22:51:16 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/27 18:30:52 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	*ft_strjoinn(char *s1, char *s2)
 
 	i = 0;
 	j = 0;
-	final = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	final = malloc(sizeof(char) * (ft_strlenn(s1) + ft_strlenn(s2) + 1));
 	if (final == NULL)
 		return (NULL);
 	while (s1 && s1[i])
@@ -99,7 +99,7 @@ char	*get_next_line(int fd)
 			else if (i == 0)
 				break ;
 		}
-		line = ft_strjoin(line, buffer);
+		line = ft_strjoinn(line, buffer);
 		if (ft_checknl(buffer))
 			break ;
 	}
