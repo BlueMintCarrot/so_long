@@ -6,19 +6,19 @@
 #    By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/27 13:43:12 by joada-si          #+#    #+#              #
-#    Updated: 2025/11/27 17:26:06 by joada-si         ###   ########.fr        #
+#    Updated: 2025/11/28 23:08:06 by joada-si         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-FLAGS = -g -Wall -Werror -Wextra -I.
+FLAGS = -Wall -Werror -Wextra -g
 SOURCE = $(addprefix source/, $(SRC))
 SRC = animations.c animator.c bat_animation1.c bat_animation2.c bat_movement1.c \
-		bat_movement2.c bat_vs_bunny.c bat.c bunny_movement.c creating_images.c \
+		bat_movement2.c bat_vs_bunny.c bat.c bunny_movement.c creating_images.c coordinates.c \
 		ducks1.c ducks2.c extras.c flood_fill.c free_stuff.c get_next_line.c \
-		hell.c jump_bunny1.c jump_bunny2.c libft1.c libft2.c load_pictures1.c \
+		hell.c jump_bunny_left.c jump_bunny_right.c libft1.c libft2.c load_pictures1.c \
 		load_pictures2.c load_pictures3.c load_pictures4.c load_pictures5.c \
-		load_pictures6.c map_verifications1.c map_verifications2.c moves.c \
+		load_pictures6.c map_verifications1.c map_verifications2.c map_verifications3.c moves.c \
 		picture_cleaner1.c picture_cleaner2.c picture_cleaner3.c prinf1.c \
 		prinf2.c so_long.c
 OBJS_DIR = obj
@@ -35,7 +35,7 @@ $(NAME): $(OBJS) $(MLX)
 		
 $(OBJS_DIR)/%.o: source/%.c
 	@mkdir -p $(OBJS_DIR)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 
 $(MLX):
 	@$(MAKE) -C $(MLX_DIR)

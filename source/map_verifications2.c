@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:51:48 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/27 15:50:14 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/28 23:00:21 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	map_check(t_info *info)
 {
-	int	i;
-	int	array[3];
+	int			i;
+	int			array[3];
+	static int	fc;
 
 	i = -1;
 	array[0] = 0;
@@ -27,9 +28,11 @@ int	map_check(t_info *info)
 		array[1] += count_exit(info, i);
 		array[2] += count_collectibles(info, i);
 	}
+	if (fc == 0 && array[2] > 0)
+		fc = 1;
 	if (array[1] == 1 && array[0] == 1 && array[2] >= 1)
 		return (1);
-	error_map_check(array, info);
+	error_map_check(fc, array, info);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:51:10 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/27 19:22:50 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/28 21:46:40 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,11 @@ void	flood_fill(t_info *info, int x, int y)
 		w++;
 	while (info->flood_fill_map[h])
 		h++;
-	if (x < 0 || y < 0 || x >= w || y >= h)
+	if (x < 0 || y < 0 || x > w || y > h)
 		return ;
 	if (info->flood_fill_map[y][x] == '1'
 		|| info->flood_fill_map[y][x] == 'W')
-			return ;
+		return ;
 	info->flood_fill_map[y][x] = 'W';
 	(flood_fill(info, (x + 1), y), flood_fill(info, (x - 1), y));
 	(flood_fill(info, x, (y + 1)), flood_fill(info, x, (y - 1)));

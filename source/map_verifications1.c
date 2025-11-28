@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:51:46 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/27 17:57:48 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/28 18:39:10 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,11 +100,11 @@ int	map_check4(t_info *info)
 	return (1);
 }
 
-int	error_map_check(int *array, t_info *info)
+int	error_map_check(int fc, int *array, t_info *info)
 {
 	if (info->map[0] == NULL)
 		return (free_dptr(info), free(info), 0);
-	else if (array[2] == 0)
+	else if (fc == 0 && array[2] == 0)
 		return (free_dptr(info), free(info), print_error_message(1), 0);
 	else if (array[0] != 1)
 		return (free_dptr(info), free(info), print_error_message(2), 0);

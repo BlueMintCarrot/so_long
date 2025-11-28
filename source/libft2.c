@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:51:26 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/26 22:51:27 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/27 20:33:36 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,19 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	}
 	return (0);
+}
+
+char	*ft_strdup(const char *s)
+{
+	char	*dup;
+	int		i;
+
+	dup = malloc(sizeof(char) * ft_strlen(s) + 1);
+	i = -1;
+	if (!dup)
+		return (NULL);
+	while (s[++i])
+		dup[i] = s[i];
+	dup[i] = '\0';
+	return (dup);
 }

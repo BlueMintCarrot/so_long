@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:51:12 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/27 15:49:54 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/28 22:55:40 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,21 @@ void	free_dptr(t_info *info)
 	i = -1;
 	if (!info)
 		return ;
-	while (info->map[++i])
-		if (info->map[i])
-			free(info->map[i]);
+	if (info->map)
+	{
+		while (info->map[++i])
+			if (info->map[i])
+				free(info->map[i]);
+	}
 	if (info->map)
 		free(info->map);
 	i = -1;
-	while (info->flood_fill_map[++i])
-		if (info->flood_fill_map[i])
-			free(info->flood_fill_map[i]);
+	if (info->flood_fill_map)
+	{
+		while (info->flood_fill_map[++i])
+			if (info->flood_fill_map[i])
+				free(info->flood_fill_map[i]);
+	}
 	if (info->flood_fill_map)
 		free(info->flood_fill_map);
 }
@@ -71,6 +77,7 @@ int	quit(t_info *info, int key)
 		free(info->images->floor);
 	if (info->images->wall)
 		free(info->images->wall);
+	//picture_cleaner(info);
 	free_stuff(info);
 	mlx_destroy_window(info->vars->mlx, info->vars->window);
 	mlx_destroy_display(info->vars->mlx);

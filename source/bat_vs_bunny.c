@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:50:50 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/27 15:49:39 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/28 21:45:38 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,12 @@ void	killed_by_a_bat_again(t_info *info, int bat_nr)
 
 void	bumped_into_a_bat(t_info *info)
 {
-	if (info->map[info->y][info->x - 1] == 'X'
-		|| info->map[info->y][info->x - 1] == 'Y')
+	if (info->map[info->y][info->x + 1] == 'X'
+		|| info->map[info->y][info->x + 1] == 'Y')
 		mlx_put_image_to_window(info->vars->mlx, info->vars->window,
 			info->imgs[49]->img, info->x * 64 + 32, info->y * 64);
-	else if (info->map[info->y][info->x + 1] == 'X'
-		|| info->map[info->y][info->x + 1] == 'Y')
+	else if (info->map[info->y][info->x - 1] == 'X'
+		|| info->map[info->y][info->x - 1] == 'Y')
 		mlx_put_image_to_window(info->vars->mlx, info->vars->window,
 			info->imgs[51]->img, info->x * 64 - 32, info->y * 64);
 }
@@ -107,16 +107,19 @@ void	bumped_into_a_bat_again(t_info *info)
 		&& info->bunny_direction == 6)
 		mlx_put_image_to_window(info->vars->mlx, info->vars->window,
 			info->imgs[45]->img, info->x * 64, info->y * 64 + 32);
-	else if (info->map[info-> y + 1][info->x] == 'X'
-		|| info->map[info->y + 1][info->x] == 'Y' && info->bunny_direction == 4)
+	else if ((info->map[info-> y + 1][info->x] == 'X'
+		|| info->map[info->y + 1][info->x] == 'Y')
+		&& info->bunny_direction == 4)
 		mlx_put_image_to_window(info->vars->mlx, info->vars->window,
 			info->imgs[46]->img, info->x * 64, info->y * 64 + 32);
-	else if (info->map[info->y - 1][info->x] == 'X'
-		|| info->map[info->y - 1][info->x] == 'Y' && info->bunny_direction == 6)
+	else if ((info->map[info->y - 1][info->x] == 'X'
+		|| info->map[info->y - 1][info->x] == 'Y')
+		&& info->bunny_direction == 6)
 		mlx_put_image_to_window(info->vars->mlx, info->vars->window,
 			info->imgs[41]->img, info->x * 64, info->y * 64 - 32);
-	else if (info->map[info->y - 1][info->x] == 'X'
-		|| info->map[info->y - 1][info->x] == 'Y' && info->bunny_direction == 4)
+	else if ((info->map[info->y - 1][info->x] == 'X'
+		|| info->map[info->y - 1][info->x] == 'Y')
+		&& info->bunny_direction == 4)
 		mlx_put_image_to_window(info->vars->mlx, info->vars->window,
 			info->imgs[42]->img, info->x * 64, info->y * 64 - 32);
 }

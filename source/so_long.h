@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:51:54 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/27 16:58:56 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/28 23:06:17 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,9 +141,10 @@ typedef struct s_info
 }				t_info;
 
 char			*ft_itoa(int nb);
+char			*ft_strdup(const char *s);
 char			*ft_strjoin(const char *s1, const char *s2);
 char			*get_next_line(int fd);
-char			**create_map(t_info *info, char *filename, int n);
+char			**create_map(char *filename, int n);
 int				animations(t_info *info);
 int				arg_checker(int argc);
 int				check_c_or_e(t_info *info);
@@ -151,7 +152,7 @@ int				count_collectibles(t_info *info, int i);
 int				count_exit(t_info *info, int i);
 int				count_player(t_info *info, int i);
 int				duck_animation(t_info *info);
-int				error_map_check(int *array, t_info *info);
+int				error_map_check(int fc, int *array, t_info *info);
 int				final_image_checker(t_info *info);
 int				final_map_check(t_info *info);
 int				flame_animation(t_info *info);
@@ -160,6 +161,8 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				halves_check(t_info *info);
 int				halves_check2(t_info *info);
 int				image_check(t_info *info);
+int				jump_bunny_left_left2(t_info *info, int r);
+int				jump_bunny_right_right2(t_info *info, int r);
 int				load_pictures(t_info *info);
 int				load_pictures1(t_info *info);
 int				load_pictures2(t_info *info);
@@ -178,7 +181,7 @@ int				new_bat(t_info *info, int x, int y, char c);
 int				quit(t_info *info, int key);
 int				to_move_or_not_to_move(t_info *info, int x, int y);
 int				where_is_the_bunny(t_info *info);
-int				where_is_the_bunny_going(t_info *info, int k);
+int				where_is_the_bunny_going(int k, t_info *info);
 size_t			ft_strlen(const char *s);
 t_imginfo		*new_file_img(char *path, void *mlx, void *window);
 t_imginfo		*new_img(int w, int h, t_vars *mlx, t_vars *window);
@@ -277,7 +280,6 @@ void			print_error_message2(int i);
 void			print_image(t_info *info, int x, int y);
 void			put_img_to_img(t_imginfo *dst, t_imginfo *src, int x, int y);
 void			put_pixel_img(t_imginfo *img, int x, int y, int color);
-//void			set_font_helper(t_info *info);
 void			quit_bat(t_info *info);
 void			where_is_the_bunny_now(t_info *info, int k);
 void			where_the_fuck_is_the_bunny(t_info *info);

@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:51:28 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/27 15:28:44 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/28 22:54:56 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 int	load_pictures(t_info *info)
 {
-	if (!load_pictures1(info) || !load_pictures2(info) || !load_pictures8(info))
+	if (!load_pictures1(info) || !load_pictures2(info))
 		return (0);
 	(load_pictures3(info), load_pictures4(info), load_pictures5(info));
-	(load_pictures6(info), load_pictures7(info), load_pictures9(info));
+	(load_pictures6(info), load_pictures7(info));
+	if (!load_pictures8(info))
+		return (0);
+	load_pictures9(info);
 	(load_pictures10(info), load_pictures11(info), load_pictures12(info));
 	(load_pictures13(info), load_pictures14(info), load_pictures15(info));
 	(load_pictures16(info), load_pictures17(info), load_pictures18(info));
-	(load_pictures19(info), load_pictures20(info), picture_cleaner(info));
-	load_stuff(info);
+	(load_pictures19(info), load_pictures20(info), load_pictures21(info));
+	(load_stuff(info));
 	return (1);
 }
 

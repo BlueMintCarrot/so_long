@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:51:30 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/27 19:41:55 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/28 22:55:19 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	load_pictures1(t_info *info)
 {
 	info->images = malloc(sizeof(t_images));
 	if (!info->images)
-		return (free_dptr(info), free(info), 0);
+		return (0);
 	info->images->bat = new_file_img("./textures/Bat_64.xpm", info->vars->mlx,
 			info->vars->window);
 	info->images->bat_wings_up = new_file_img("./textures/Bat_Wings_Up64.xpm",
@@ -54,7 +54,7 @@ int	load_pictures2(t_info *info)
 		("./textures/Wall2.xpm", info->vars->mlx, info->vars->window);
 	info->halves = malloc(sizeof(t_halves));
 	if (!info->halves)
-		return (free_dptr(info), free(info), 0);
+		return (0);
 	info->halves->bat_bottom_half = new_file_img
 		("./textures/Bat_Bottom_Half.xpm", info->vars->mlx,
 			info->vars->window);

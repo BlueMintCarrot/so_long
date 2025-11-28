@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:51:34 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/27 15:19:37 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/28 20:47:49 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	load_pictures11(t_info *info)
 	put_img_to_img(info->imgs[20], info->images->floor, 0, 0);
 	put_img_to_img(info->imgs[20],
 		info->halves->duck_tail_half_facing_left, 0, 0);
-	put_img_to_img(info->imgs[20], info->images->jumping_bunny_right, 0, 0);
+	put_img_to_img(info->imgs[20], info->images->jumping_bunny_left, 0, 0);
 }
 
 void	load_pictures12(t_info *info)
@@ -52,7 +52,7 @@ void	load_pictures12(t_info *info)
 	put_img_to_img(info->imgs[22], info->images->floor, 0, 0);
 	put_img_to_img(info->imgs[22],
 		info->halves->duck_face_half_facing_left, 0, 0);
-	put_img_to_img(info->imgs[22], info->images->jumping_bunny_left, 0, 0);
+	put_img_to_img(info->imgs[22], info->images->jumping_bunny_right, 0, 0);
 	info->imgs[23] = new_img(64, 64, info->vars->mlx, info->vars->window);
 	put_img_to_img(info->imgs[23], info->images->floor, 0, 0);
 	put_img_to_img(info->imgs[23],

@@ -6,7 +6,7 @@
 /*   By: joada-si <joada-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 22:51:24 by joada-si          #+#    #+#             */
-/*   Updated: 2025/11/26 22:51:25 by joada-si         ###   ########.fr       */
+/*   Updated: 2025/11/28 21:42:57 by joada-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,5 +123,6 @@ char	*ft_itoa(int nb)
 	while (--ij[1] > -1)
 		str[ij[0]++] = array[ij[1]] + '0';
 	str[ij[0]] = '\0';
+	free(array);
 	return (str);
 }
